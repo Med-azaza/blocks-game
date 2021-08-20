@@ -25,7 +25,7 @@ const Box = ({
       ${settings.b ? "bottom" : ""} 
       ${settings.l ? "left" : ""} 
       ${settings.r ? "right" : ""} 
-      ${selected == num ? "selected" : ""}`}
+      ${selected === num ? "selected" : ""}`}
     >
       {num}
     </div>
