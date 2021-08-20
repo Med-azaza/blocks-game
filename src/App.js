@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect } from "react";
+import "./styles/App.css";
+
+import Game from "./components/game";
+import Modal from "./components/modal";
 
 function App() {
+  const [selecting, setSelecting] = useState(false);
+  const [selected, setSelected] = useState(-1);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Game
+        setSelecting={setSelecting}
+        selecting={selecting}
+        selected={selected}
+        setSelected={setSelected}
+      />
+      <Modal
+        setSelecting={setSelecting}
+        selecting={selecting}
+        selected={selected}
+        setSelected={setSelected}
+      />
     </div>
   );
 }
